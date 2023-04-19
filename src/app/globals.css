@@ -9,11 +9,56 @@
   main {
     @apply relative;
   }
+  @font-face {
+    font-family: "Telegraf";
+    font-weight: 300;
+    src: url('../../public/fonts/Telegraf-Light.otf') format('otf'), url('../../public/fonts/Telegraf-Light.woff2') format('woff2') ;
+  }
+  @font-face {
+    font-family: "Telegraf";
+    font-weight: 400;
+    font-style: normal;
+    src: url('../../public/fonts/Telegraf-Regular.otf') format('otf'), url('../../public/fonts/Telegraf-Regular.woff2') format('woff') ;
+  }
+  @font-face {
+    font-family: "Telegraf";
+    font-weight: 500;
+    src: url('../../public/fonts/Telegraf-Medium.otf') format('otf'), url('../../public/fonts/Telegraf-Medium.woff2') format('woff') ;
+  }
+  @font-face {
+    font-family: "Telegraf";
+    font-weight: 600;
+    src: url('../../public/fonts/Telegraf-SemiBold.otf') format('otf'), url('../../public/fonts/Telegraf-SemiBold.woff2') format('woff') ;
+  }
+  @font-face {
+    font-family: "Telegraf";
+    font-weight: 700;
+    src: url('../../public/fonts/Telegraf-Bold.otf') format('otf'), url('../../public/fonts/Telegraf-Bold.woff2') format('woff') ;
+  }
+  @font-face {
+    font-family: "Telegraf";
+    font-weight: 800;
+    src: url('../../public/fonts/Telegraf-Black.otf') format('otf'), url('../../public/fonts/Telegraf-Black.woff2') format('woff') ;
+  }
+}
+
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 text-white rounded-sm;
+  }
+  .btn-md {
+    @apply px-4 h-8;
+  }
+
+  .tab-active {
+    @apply border-b-[2px] border-primary-500 font-medium;
+  }
 }
 
 :root {
   --max-width: 1100px;
-  font-family: 'Saira', 'sans-serif';
+  font-family: "Telegraf", serif;
   letter-spacing: -0.5px;
 }
 
@@ -28,6 +73,8 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   position: relative;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 a {

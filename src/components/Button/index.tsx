@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 
-interface ButtonProps {
-    text: string;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    text: string,
+    variant: string,
   }
 
-const primary = 'bg-primary-500'
-const m = 'text-white p-1'
+  const buttonVariants = {
+    primaryMedium: 'btn-primary btn-md tracking-tight font-medium hover:bg-primary-300',
+    secondaryMedium: 'btn-primary zaz',
+  }
 
-const Button = ({text}:ButtonProps) => {
+
+const Button = ({text, variant}:ButtonProps) => {
   return (
-    <button className={`bg-primary-500 text-white px-4 rounded-sm h-8`}>{text}</button>
+    <button className={
+      variant === 'primary-md' ? buttonVariants.primaryMedium : '' ||
+      variant === 'secondary-md' ? buttonVariants.secondaryMedium : ''
+      }>{text}</button>
   )
 }
 
