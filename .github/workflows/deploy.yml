@@ -5,16 +5,16 @@ on:
         branches:
             - main
 
-    jobs:
-        build:
-            runs-on: ubuntu-latest
-            name: Build artifact
-            steps:
-                - uses: actions/checkout@v2
-                  name: Checkout
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        name: Build artifact
+        steps:
+            - uses: actions/checkout@v2
+              name: Checkout
 
-                - name: Installing dependencies
-                  run: npm ci
+            - name: Installing dependencies
+              run: npm ci
 
-                - name: Build project
-                  run: npm run build
+            - name: Build project
+              run: npm run build
